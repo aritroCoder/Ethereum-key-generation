@@ -162,3 +162,18 @@
   flex-wrap: wrap;
   overflow: auto;
 }
+.tutorial{
+  margin: 10px 0;
+  text-align: left;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  overflow: auto;
+}
+.listItem{
+  margin: 10px 0;
+  padding: 10px 0;
+  flex-wrap: wrap;
+  overflow: auto;
+}
