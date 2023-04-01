@@ -11,7 +11,7 @@ export default function Home() {
   const [address, setAddress] = useState('Not generated');
   const [message, setMessage] = useState('');
   const [messageHash, setMessageHash] = useState('');
-  const [signedMsg, setSignedMsg] = useState<{r: String, s: String, recoveryParam: Number}>({r: '', s: ''});
+  const [signedMsg, setSignedMsg] = useState<{r: String, s: String, recoveryParam: Number}>({r: '', s: '', recoveryParam: 0});
   const [verification, setVerification] = useState(false);
   const ec = new elliptic.ec('secp256k1');
   
@@ -83,7 +83,7 @@ export default function Home() {
           <ol>
             <li className={styles.listItem}>The private key is a 256 bit binary string generated randomly in ethereum with a generator of sufficiently high entropy.</li>
             <li className={styles.listItem}>Elliptic curve encryption is applied using scep256k1 curve to get public key from private key.</li>
-            <li className={styles.listItem}>The public key is hashed using keccak-256 hashing algorithm and the last 40 characters appended with a '0x' becomes the wallet address.</li>
+            <li className={styles.listItem}>The public key is hashed using keccak-256 hashing algorithm and the last 40 characters appended with a &lsquo;0x&rsquo; becomes the wallet address.</li>
             <li className={styles.listItem} > When a message (or a transaction) is entered, it is first hashed with keccak-256 and then signed with the private key generated at first step. This produces three parts v, r, s which are used while verifying the signature.</li>
             <li className={styles.listItem} >At verification step, the public key is used with the parameters to verify that the signature produced was correct.</li>
           </ol>
@@ -110,7 +110,7 @@ export default function Home() {
           <button onClick={() => signHash()}>Sign and hash</button>
           {signedMsg.r && <p>
             <span style={{fontWeight: 'bold'}}>Signed message:</span><br/>
-            v = {signedMsg.recoveryParam}<br/>
+            v = {signedMsg.recoveryParam.toString()}<br/>
             r = {signedMsg.r.toString()}<br/>
             s = {signedMsg.s.toString()}
           </p>}
@@ -122,7 +122,7 @@ export default function Home() {
             <p><span style={{fontWeight: 'bold'}}>Message hash:</span> {messageHash}</p>
             <p><span style={{fontWeight: 'bold'}}>Public key:</span> {publicKey}</p>
             <p><span style={{fontWeight: 'bold'}}>Signed message:</span><br/>
-              v = {signedMsg.recoveryParam}<br/>
+              v = {signedMsg.recoveryParam.toString()}<br/>
               r = {signedMsg.r.toString()}<br/>
               s = {signedMsg.s.toString()}
             </p>
