@@ -76,7 +76,8 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/logo.png" />
       </Head>
-      <main style={{overflowX: 'hidden', padding: '0 25%'}}>
+      <div>
+      <div style={{overflowX: 'hidden', margin: '0 auto',minWidth: '300px', maxWidth: '800px'}}>
         <h1>Ethereum key generation</h1>
         <div className={styles.tutorial}>
           <h3>Steps of key generation in ethereum</h3>
@@ -129,7 +130,8 @@ export default function Home() {
             <p>Verification result: {verification? "Verified" : <span style={{backgroundColor: "red", padding: 5}}>Not Verified</span>}</p>
             </div>
         </div>
-      </main>
+      </div>
+      </div>
       <footer className={styles.footer}>
         Made with ❤️  by <a href="https://www.github.com/aritroCoder">aritroCoder</a>
       </footer>
