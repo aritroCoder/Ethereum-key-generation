@@ -12,11 +12,17 @@
     "@types/node": "18.15.11",
     "@types/react": "18.0.31",
     "@types/react-dom": "18.0.11",
+    "elliptic": "^6.5.4",
+    "elliptic-curve": "^0.1.0",
     "eslint": "8.37.0",
     "eslint-config-next": "13.2.4",
+    "js-sha3": "^0.8.0",
+    "keccak": "^3.0.3",
     "next": "13.2.4",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "react-function-plot": "^0.0.14",
+    "react-svg": "^16.1.7",
     "typescript": "5.0.3"
   }
 }
